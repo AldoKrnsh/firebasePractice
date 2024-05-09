@@ -1,0 +1,13 @@
+<form>
+    <label for="persona">Nombre completo:</label>
+    <input type="text" name="persona" placeholder="Ingresa el nombre completo" [(ngModel)]="nombreInput">
+
+    <button type="submit" (click)="agregarPersona(nombreInput)">Enviar</button>
+</form>
+
+<div>
+    <ul *ngFor="let nombre of personas; let i = index">
+        <li> {{i}} - {{nombre}} <button (click)="editar(i)">Editar</button> <button
+                (click)="eliminar(i)">Eliminar</button></li>
+    </ul>
+</div>
